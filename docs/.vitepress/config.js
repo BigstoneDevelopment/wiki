@@ -47,5 +47,16 @@ export default {
             { icon: "github", link: "https://github.com/BigstoneDevelopment" },
             { icon: "discord", link: "https://discord.bigstone.dev", target: "_blank" },
         ],
+
+        lastUpdated: {
+              text: 'Updated at',
+              formatOptions: {
+                    dateStyle: 'full',
+                    timeStyle: 'medium'
+              }
+        },
+        search: {
+              provider: 'local'
+        },
     },
 };
