@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as a,ae as i}from"./chunks/framework.Cd-3tpCq.js";const p=JSON.parse('{"title":"Standards","description":"","frontmatter":{},"headers":[],"relativePath":"standards.md","filePath":"standards.md"}'),s={name:"standards.md"};function n(r,t,l,d,h,c){return a(),o("div",null,t[0]||(t[0]=[i("",54)]))}const g=e(s,[["render",n]]);export{p as __pageData,g as default};
