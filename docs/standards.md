@@ -100,8 +100,7 @@ All ports will be named in this format:
 - **Locations:** iRAIL at (8, 2) – oRAIL at (9, 2)
 - The iRAIL is regular rail, and oRAIL is powered rail. This port can be used to transfer items (or mobs/players) using minecarts.
 
-![Locations of each of the ports](https://raw.githubusercontent.com/BigstoneDevelopment/datapack-wiki/main/assets/bigstone_ports_new.png)
-(Outdated image)
+![Locations of each of the ports](/ports.png)
 
 ### Item Port Types
 
