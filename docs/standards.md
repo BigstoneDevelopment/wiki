@@ -2,7 +2,16 @@
 
 > _**This file contains all the required standards for components to get it accepted into the Datapack.**_
 
-## SECTION 1: PORTS
+## Rules
+_NOTE: Not all the rules are here yet_
+
+- **Components need to be able to work when suspended in the air.** This means that no redstone can be placed at y level 1 since its support is out of bounds.
+- **Components cannot power things outside of it other than through ports** to prevent accidental conflict. So don't power blocks through roofs or walls.
+- **Modded components can have a status of extended semistandard at the highest** to prevent confusion and make sure people don't try to use them with vanilla.
+
+<br>
+
+## Ports
 
 ### Port Format
 
@@ -16,6 +25,10 @@ All ports will be named in this format:
 - **[TYPE]** > BIN (Binary) / HEX (Hexadecimal)
 - **[#PORTS]** > The number of ports it has, as a number. If it only has 1 port, you don't have to include this tag! _(e.g. Just BIN instead of BIN-1)_
 - **[ROLE]** > Most ports will be SD (Standard), but ports with specific roles will have different colors and have a different named tag. For example, HEX-STATE. If the port is SD you don't have to include this tag! _(e.g. just HEX instead of HEX-SD)_
+
+<br><br>
+
+![Locations of each of the ports](/ports.png)
 
 ### Port Compliance Ratings
 
@@ -100,7 +113,7 @@ All ports will be named in this format:
 - **Locations:** iRAIL at (8, 2) – oRAIL at (9, 2)
 - The iRAIL is regular rail, and oRAIL is powered rail. This port can be used to transfer items (or mobs/players) using minecarts.
 
-![Locations of each of the ports](/ports.png)
+<br>
 
 ### Item Port Types
 
@@ -129,7 +142,7 @@ All ports will be named in this format:
 - oITEM > Bottom of the block.
 - Transports items using water streams. It is faster, but unlike ITEM-HOPPER, it cannot be multidirectional on the sides.
 
-‎ _IMAGES COMING SOON_
+<br>
 
 ### Mediumstone Port Types
 
@@ -157,26 +170,3 @@ All ports will be named in this format:
 - **Status:** Semistandard
 - **Location:** iMHEX at (3, 2) – oMHEX at (6, 2)
 - The Medium version of the HEX port.
-
-## SECTION 2: NAMING SCHEME
-
-When sharing a component, try to stick to this format:
-
-[Component name]  
-[Description here]  
-
-North: oHEX  
-South: iBIN, iHEX  
-East: iBIN  
-West: iHEX  
-
-You could also represent this with a diagram, with colored arrows. Input arrows would point towards the block, output would point away from it. Here's the above example, this time as a diagram:  
-![component diagram example](https://raw.githubusercontent.com/BigstoneDevelopment/datapack-wiki/main/assets/diagram_example.png)
-
-## SECTION 3: RULES  
-
-NOTE: Not all the rules are here yet  
-
-- **components need to be able to work when suspended in the air.** This means that no redstone can be placed at y level 1 since its support is out of bounds.
-- **components cannot power things outside of it other than through ports** to prevent accidental conflict. So don't power blocks through roofs or walls.
-- **modded components can have a status of extended semistandard at the highest** to prevent confusion and make sure people don't try to use them with vanilla.
