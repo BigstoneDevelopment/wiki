@@ -3,6 +3,8 @@
 > [!IMPORTANT]
 > This file contains all the required standards for components to get it accepted into the Datapack.
 
+[[toc]]
+
 ## Rules
 _NOTE: Not all the rules are here yet_
 
