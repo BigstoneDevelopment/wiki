@@ -14,7 +14,7 @@ hero:
       link: /standards
     - theme: alt
       text: Sandbox Guides
-      link: /sandbox
+      link: /guides
 
 features:
   - icon: ⚡️
