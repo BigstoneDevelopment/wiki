@@ -21,29 +21,29 @@ _NOTE: Not all the rules are here yet_
 > 
 > `[DIR][TYPE]-[#PORTS][ROLE]`
 
-#### How the format works
-
+::: details How the format works
 - **[DIR]** > Can be either an Input, Output, or Bidirectional port (Labelled i, o or b) Bidirectional port holes don't exist for redstone ports yet, but do for item ports.
 - **[TYPE]** > BIN (Binary) / HEX (Hexadecimal)
 - **[#PORTS]** > The number of ports it has, as a number. If it only has 1 port, you don't have to include this tag! _(e.g. Just BIN instead of BIN-1)_
 - **[ROLE]** > Most ports will be SD (Standard), but ports with specific roles will have different colors and have a different named tag. For example, HEX-STATE. If the port is SD you don't have to include this tag! _(e.g. just HEX instead of HEX-SD)_
+:::
 
 <br><br>
 
-### Port Compliance Ratings
+![Locations of each of the ports](/ports.png)
 
-- **Compliant:** A port/component that is completely compliant!
-- **Semistandard:** Incompatible with some ports, or a less used/more niche version of something else, or a separate size.
-- **Extended Semistandard:** Compliant/semistandard but it is allowed to include modded blocks/items/entities.  An example would be create rotational power based ports or components.
-- **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
+::: info Port Compliance Ratings
+- ✅**Compliant:** A port/component that is completely compliant!
+- 😐 **Semistandard:** Incompatible with some ports, or a less used/more niche version of something else, or a separate size.
+- ⚠️ **Extended Semistandard:** Compliant/semistandard but it is allowed to include modded blocks/items/entities.  An example would be create rotational power based ports or components.
+- ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
+:::
 
-### Redstone Port Types
-
+::: info Redstone Port Types
 - Each port would have a corresponding colored concrete block under it.
 - Locations of the port holes are in (X, Y), in which (1, 1) is the bottom left block on a 16x16 face looking from the side of a chunk. _(Clarification: Port HOLES, not the concrete position)_
 - Some ports are "dangerously incompatible," meaning the port's position overlaps with a different, more prioritized port(s), which can cause issues when next to these ports.
-
-![Locations of each of the ports](/ports.png)
+:::
 
 ::: details 🟥 BIN
 - **Color:** 🟥 Red Concrete
@@ -123,7 +123,7 @@ _NOTE: Not all the rules are here yet_
 - **All Made By:** Diax
 - **All Status:** Compliant
 
-::: details ITEM-HOPPER
+::: details ⬛️ ITEM-HOPPER
 - **Side Locations:**
 - bITEM > The left side of the port is input hoppers, and the right side of the port is for output hoppers.
 - iITEM > The whole port uses input hoppers.
@@ -134,7 +134,7 @@ _NOTE: Not all the rules are here yet_
 - Transports items using hoppers. Recommended to use bITEM on the sides as it is multidirectional. If you want speed, try to use ITEM-WATER instead of iITEM/oITEM-HOPPER when possible
 :::
 
-::: details ITEM-WATER
+::: details ⬛️ ITEM-WATER
 - **Side Locations:**
 - iITEM > Water flowing inwards
 - oITEM > Water flowing outwards
