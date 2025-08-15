@@ -22,7 +22,7 @@ features:
     details: We are the offical wiki which means as long as you follow our standards, you're safe!
   - icon: 🎉
     title: Run by the community
-    details: We are all members of the Bigstone community which means think how you do.
+    details: We are all members of the Bigstone community which means we think how you do.
   - icon: 🔥
     title: We are always open for feedback
     details: Please just contact us though our discord tickets and we can help you!
