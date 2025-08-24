@@ -41,11 +41,10 @@ _NOTE: Not all the rules are here yet_
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
 
-::: info Redstone Port Types
+### Redstone Port Types
 - Each port would have a corresponding colored concrete block under it.
 - Locations of the port holes are in (X, Y), in which (1, 1) is the bottom left block on a 16x16 face looking from the side of a chunk. _(Clarification: Port HOLES, not the concrete position)_
 - Some ports are "dangerously incompatible," meaning the port's position overlaps with a different, more prioritized port(s), which can cause issues when next to these ports.
-:::
 
 ::: details 🟥 BIN
 - **Color:** 🟥 Red Concrete
