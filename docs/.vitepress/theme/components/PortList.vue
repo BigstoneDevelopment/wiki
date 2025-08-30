@@ -14,7 +14,7 @@
     const ports = ref([]);
 
     async function loadData() {
-        const raw = await import(`../data/ports/${props.file}?raw`);
+        const raw = await import(`../data/ports/${props.file}.yaml?raw`);
         const parsed = YAML.parse(raw.default);
         category.value = parsed.category;
         intro.value = parsed.intro;
