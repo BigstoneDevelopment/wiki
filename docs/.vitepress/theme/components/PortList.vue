@@ -8,7 +8,7 @@
 
     const data = ref({ category: '', intro: '', ports: [] });
 
-    const yamlFiles = import.meta.glob('../data/ports/*.yaml', { as: 'raw' });
+    const yamlFiles = import.meta.glob('../data/ports/*.yaml', { query: '?raw', import: 'default' });
 
     onMounted(async () => {
         const path = `../data/ports/${props.file}`;
