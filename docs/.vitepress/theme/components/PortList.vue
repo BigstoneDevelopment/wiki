@@ -30,18 +30,16 @@
 		<div v-html="data.intro" class="prose mb-4"></div>
 
 		<div class="grid gap-4">
-			<div
-				v-for="port in data.ports"
-				:key="port.name"
-				class="p-4 border rounded shadow"
-			>
-				<h4>{{ port.emoji }} {{ port.name }}</h4>
-				<p><strong>Made By:</strong> {{ port.madeBy }}</p>
-				<p><strong>Status:</strong> {{ port.status }}</p>
-				<p><strong>Location:</strong> {{ port.location }}</p>
-				<p>{{ port.description }}</p>
-			</div>
-		</div>
+            <details v-for="port in data.ports" :key="port.name" class="border rounded shadow p-2">
+                <summary class="font-semibold cursor-pointer">{{ port.emoji }} {{ port.name }}</summary>
+                <div class="mt-2 ml-4 prose">
+                    <p><strong>Made By:</strong> {{ port.madeBy }}</p>
+                    <p><strong>Status:</strong> {{ port.status }}</p>
+                    <p><strong>Location:</strong> {{ port.location }}</p>
+                    <p>{{ port.description }}</p>
+                </div>
+            </details>
+        </div>
 	</section>
 
 	<p v-else>Loading ports...</p>
