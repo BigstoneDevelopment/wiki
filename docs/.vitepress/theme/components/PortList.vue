@@ -15,7 +15,7 @@
     });
 
     onMounted(async () => {
-        const path = `../data/ports/${props.file}.yaml`;
+        const path = `../data/ports/${props.file}`;
         if (!yamlFiles[path]) {
             console.error(`Port file not found: ${path}`);
             return;
