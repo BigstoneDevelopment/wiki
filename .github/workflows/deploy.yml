@@ -41,7 +41,7 @@ jobs:
       - name: Install Modules and build pages
         run: |
           cd docs
-          npm install vitepress yaml
+          npm install vitepress yaml markdown-it
           npx vitepress build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

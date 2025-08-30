@@ -1,6 +1,9 @@
 <script setup>
     import { ref, onMounted } from "vue";
+    import MarkdownIt from 'markdown-it'
     import YAML from "yaml";
+
+    const md = new MarkdownIt()
 
     const props = defineProps({
         file: { type: String, required: true },
@@ -18,6 +21,7 @@
             const res = await fetch(`/data/ports/${props.file}`);
             const raw = await res.text();
             data.value = YAML.parse(raw);
+            data.value.intro = md.render(data.value.intro);
         } catch (e) {
             console.error(`Port file not found: ${props.file}`, e);
         };
