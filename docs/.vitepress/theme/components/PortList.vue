@@ -1,38 +1,49 @@
 <script setup>
-    import YAML from 'yaml';
+    import { ref, onMounted } from "vue";
+    import YAML from "yaml";
 
     const props = defineProps({
-        file: { type: String, required: true }
+        file: { type: String, required: true }, // e.g., "redstone"
     });
 
-    const yamlFiles = import.meta.globEager('../data/ports/*.yaml', { query: '?raw', import: 'default' });
+    const data = ref({ category: "", intro: "", ports: [] });
 
-    const path = `../data/ports/${props.file}`;
-    let raw = '';
-    if (yamlFiles[path]) {
-        raw = yamlFiles[path];
-    } else {
-        console.error(`Port file not found: ${path}`);
-    };
+    // Glob YAML files asynchronously
+    const yamlFiles = import.meta.glob("../data/ports/*.yaml", {
+        query: "?raw",
+        import: "default",
+    });
 
-    const data = raw ? YAML.parse(raw) : { category: '', intro: '', ports: [] };
+    onMounted(async () => {
+        const path = `../data/ports/${props.file}.yaml`;
+        if (!yamlFiles[path]) {
+            console.error(`Port file not found: ${path}`);
+            return;
+        }
+        const raw = await yamlFiles[path]();
+        data.value = YAML.parse(raw);
+    });
 </script>
 
 <template>
-    <section v-if="data.ports.length" class="my-8">
-        <h3>{{ data.category }}</h3>
-        <div v-html="data.intro" class="prose mb-4"></div>
+	<section v-if="data.ports.length" class="my-8">
+		<h3>{{ data.category }}</h3>
+		<div v-html="data.intro" class="prose mb-4"></div>
 
-        <div class="grid gap-4">
-            <div v-for="port in data.ports" :key="port.name" class="p-4 border rounded shadow">
-                <h4>{{ port.emoji }} {{ port.name }}</h4>
-                <p><strong>Made By:</strong> {{ port.madeBy }}</p>
-                <p><strong>Status:</strong> {{ port.status }}</p>
-                <p><strong>Location:</strong> {{ port.location }}</p>
-                <p>{{ port.description }}</p>
-            </div>
-        </div>
-    </section>
+		<div class="grid gap-4">
+			<div
+				v-for="port in data.ports"
+				:key="port.name"
+				class="p-4 border rounded shadow"
+			>
+				<h4>{{ port.emoji }} {{ port.name }}</h4>
+				<p><strong>Made By:</strong> {{ port.madeBy }}</p>
+				<p><strong>Status:</strong> {{ port.status }}</p>
+				<p><strong>Location:</strong> {{ port.location }}</p>
+				<p>{{ port.description }}</p>
+			</div>
+		</div>
+	</section>
 
-    <p v-else>No ports found for file: {{ props.file }}</p>
+	<p v-else>Loading ports...</p>
 </template>
