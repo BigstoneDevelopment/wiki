@@ -1,0 +1,87 @@
+category: "Redstone Port Types"
+intro: |
+  - Each port would have a corresponding colored concrete block under it.
+  - Locations of the port holes are in (X, Y), in which (1, 1) is the bottom left block on a 16x16 face looking from the side of a chunk. _(Clarification: Port HOLES, not the concrete position)_
+  - Some ports are "dangerously incompatible," meaning the port's position overlaps with a different, more prioritized port(s), which can cause issues when next to these ports.
+
+ports:
+  - name: BIN
+    emoji: 🟥
+    color: red
+    madeBy: Daxis1
+    status: Compliant
+    location: "iBIN at (7, 2) - oBIN at (10, 2)"
+    description: |
+      The default port. Used to connect components together, and is the simplest port
+      (as it does not preserve signal strength). These are made for speed.
+
+  - name: HEX
+    emoji: 🟦
+    color: blue
+    madeBy: gingrspacecadet
+    status: Compliant
+    location: "iHEX at (5, 2) - oHEX at (12, 2)"
+    description: |
+      A more advanced port. They preserve the signal strength from the output of the previous block.
+      Useful for HEX calculations. Recommended to have iHEX next to an iBIN to ensure compatibility.
+
+  - name: HEX-STATE
+    emoji: 🟩
+    color: green
+    madeBy: "guigui, Spin4team4096"
+    status: Compliant
+    location: "iHEX-STATE at (5, 4) - oHEX-STATE at (12, 4)"
+    description: |
+      (Under development) Used to check the state of a component which is currently doing an operation.
+      The component can decide what signal strength each state is. Useful for "observing" component states.
+
+  - name: HEX-2
+    emoji: 🟨
+    color: yellow
+    madeBy: LimeLight
+    status: Compliant
+    location: |
+      iHEX-2 at (7, 6) and (9, 6)
+      oHEX-2 at (8, 6) and (10, 6)
+    description: |
+      Just like HEX, but carries double the amount of data, meaning it can carry 8 bits (1 byte) of data!
+
+  - name: BIN-LR
+    emoji: 🟦
+    color: cyan
+    madeBy: Spin4team4096
+    status: Compliant
+    location: |
+      iBIN-LR at (2, 3) for 1st bit, and stack upwards for each additional bit.
+      oBIN-LR at (14, 3) similarly stacks upwards.
+    description: |
+      Useful for computational components, especially since most computational circuits are vertical.
+
+  - name: BIN-8
+    emoji: 🟧
+    color: orange
+    madeBy: LimeLight
+    status: Semistandard
+    location: "Coming soon (never)"
+    description: |
+      Carries 8 bits of data, but is huge, so a wire can only be one way.
+      Useful for speed over long distances of wires, but dangerously incompatible with many other ports.
+
+  - name: SOUND
+    emoji: 🟪
+    color: purple
+    madeBy: "BastienA, Xoliks"
+    status: Compliant
+    location: "iSOUND at (7, 4) - oSOUND at (10, 4)"
+    description: |
+      A wireless port using sound and sculk sensors to transfer data.
+
+  - name: RAIL
+    emoji: 🟫
+    color: brown
+    madeBy: Spin4team4096
+    status: Compliant
+    location: "iRAIL at (8, 2) - oRAIL at (9, 2)"
+    description: |
+      The iRAIL is regular rail, and oRAIL is powered rail. Used to transfer items (or mobs/players)
+      using minecarts. ⚠️ Warning: make sure components use the same type of minecart to avoid mixing.

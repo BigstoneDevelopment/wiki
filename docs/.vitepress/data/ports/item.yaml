@@ -1,0 +1,39 @@
+category: "Item Port Types"
+intro: |
+  - Each port is a 2x2 space in the middle of a block, and can be on all sides.
+  - It's not labeled with a color since you can easily see if it uses water or hoppers.
+  - All Made By: Diax
+  - All Status: Compliant
+
+ports:
+  - name: ITEM-HOPPER
+    emoji: ⬛️
+    color: none
+    madeBy: Diax
+    status: Compliant
+    location: |
+      - Side Locations:
+        - bITEM → left = input hoppers, right = output hoppers
+        - iITEM → whole port input
+        - oITEM → whole port output
+      - Top/Bottom:
+        - iITEM → top of block
+        - oITEM → bottom of block
+    description: |
+      Transports items using hoppers. Recommended to use bITEM on sides for multidirectional support.
+      For speed, prefer ITEM-WATER instead when possible.
+
+  - name: ITEM-WATER
+    emoji: ⬛️
+    color: none
+    madeBy: Diax
+    status: Compliant
+    location: |
+      - Side Locations:
+        - iITEM → water flowing inward
+        - oITEM → water flowing outward
+      - Top/Bottom:
+        - iITEM → top of block
+        - oITEM → bottom of block
+    description: |
+      Transports items using water streams. Faster than hoppers, but cannot be multidirectional.

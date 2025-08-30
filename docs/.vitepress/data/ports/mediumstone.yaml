@@ -1,0 +1,27 @@
+category: "Mediumstone Port Types"
+intro: |
+  - Mediumstone is a variant of Bigstone, but the components are 8x8x8 instead of 16x16x16.
+  - They use the same colors as their Bigstone counterparts (to save color slots), but in different locations.
+  - Since Mediumstone is a different system, overlapping ports with Bigstone is obvious and not included.
+  - Many Medium ports overlap with other Medium ports as space is limited — these overlaps will be listed.
+
+ports:
+  - name: MBIN
+    emoji: 🟥
+    color: red
+    madeBy: GameCobra
+    status: Semistandard
+    location: "iMBIN at (3, 2) - oMBIN at (6, 2)"
+    description: |
+      The Medium version of the BIN port.
+      ⚠️ Dangerously incompatible next to MHEX.
+
+  - name: MHEX
+    emoji: 🟦
+    color: blue
+    madeBy: GameCobra
+    status: Semistandard
+    location: "iMHEX at (3, 2) - oMHEX at (6, 2)"
+    description: |
+      The Medium version of the HEX port.
+      ⚠️ Dangerously incompatible next to MBIN.
