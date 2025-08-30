@@ -3,25 +3,24 @@
     import YAML from "yaml";
 
     const props = defineProps({
-        file: { type: String, required: true }, // e.g., "redstone"
+        file: { type: String, required: true },
     });
 
     const data = ref({ category: "", intro: "", ports: [] });
 
-    // Glob YAML files asynchronously
     const yamlFiles = import.meta.glob("../data/ports/*.yaml", {
         query: "?raw",
         import: "default",
     });
 
     onMounted(async () => {
-        const path = `../data/ports/${props.file}`;
-        if (!yamlFiles[path]) {
-            console.error(`Port file not found: ${path}`);
-            return;
-        }
-        const raw = await yamlFiles[path]();
-        data.value = YAML.parse(raw);
+        try {
+            const res = await fetch(`/ports/${props.file}`);
+            const raw = await res.text();
+            data.value = YAML.parse(raw);
+        } catch (e) {
+            console.error(`Port file not found: ${props.file}`, e);
+        };
     });
 </script>
 
