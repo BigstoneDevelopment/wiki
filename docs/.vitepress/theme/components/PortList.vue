@@ -17,10 +17,10 @@
     });
 
     const statusClasses = {
-        'Compliant': 'vp-container vp-details vp-info',
-        'Semistandard': 'vp-container vp-details vp-warning',
-        'Extended Semistandard': 'vp-container vp-details vp-warning',
-        'Noncompliant': 'vp-container vp-details vp-important'
+        'Compliant': 'details custom-block',
+        'Semistandard': 'warning custom-block',
+        'Extended Semistandard': 'warning custom-block',
+        'Noncompliant': 'important custom-block'
     };
 
     onMounted(async () => {
@@ -38,15 +38,13 @@
 <template>
     <section v-if="data.ports.length" class="my-8">
         <h3>{{ data.category }}</h3>
-
-        <!-- Intro rendered as Markdown -->
         <div v-html="data.intro" class="prose mb-4"></div>
 
         <div class="grid gap-4">
             <details
                 v-for="port in data.ports"
                 :key="port.name"
-                :class="statusClasses[port.status] || 'vp-container vp-details'"
+                :class="statusClasses[port.status] || 'details custom-block'"
             >
                 <summary>{{ port.emoji }} {{ port.name }}</summary>
                 <div class="vp-container-content">
