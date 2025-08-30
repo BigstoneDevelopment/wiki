@@ -1,47 +1,38 @@
 <script setup>
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
     import YAML from 'yaml';
 
     const props = defineProps({
-        file: {
-            type: String,
-            required: true
-        }
+        file: { type: String, required: true }
     });
 
-    const category = ref('');
-    const intro = ref('');
-    const ports = ref([]);
+    const data = ref({ category: '', intro: '', ports: [] });
 
-    async function loadData() {
-        const raw = await import(`../data/ports/${props.file}.yaml?raw`);
-        const parsed = YAML.parse(raw.default);
-        category.value = parsed.category;
-        intro.value = parsed.intro;
-        ports.value = parsed.ports;
-    };
+    const yamlFiles = import.meta.glob('../data/ports/*.yaml', { as: 'raw' });
 
-    loadData();
+    onMounted(async () => {
+        const path = `../data/ports/${props.file}`;
+        if (!yamlFiles[path]) {
+            console.error(`Port file not found: ${path}`);
+            return;
+        };
+        const raw = await yamlFiles[path]();
+        data.value = YAML.parse(raw);
+    });
 </script>
 
 <template>
     <section class="my-8">
-        <h3 class="text-xl font-bold mb-2">{{ category }}</h3>
-        <div v-html="intro" class="prose mb-4"></div>
+        <h3>{{ data.category }}</h3>
+        <div v-html="data.intro" class="prose mb-4"></div>
 
-            <div class="grid gap-4">
-            <div
-                v-for="port in ports"
-                :key="port.name"
-                class="rounded-2xl p-4 border shadow-md bg-white"
-            >
-                <h4 class="text-lg font-bold flex items-center gap-2">
-                    <span>{{ port.emoji }}</span> {{ port.name }}
-                </h4>
+        <div class="grid gap-4">
+            <div v-for="port in data.ports" :key="port.name" class="p-4 border rounded shadow">
+                <h4>{{ port.emoji }} {{ port.name }}</h4>
                 <p><strong>Made By:</strong> {{ port.madeBy }}</p>
                 <p><strong>Status:</strong> {{ port.status }}</p>
                 <p><strong>Location:</strong> {{ port.location }}</p>
-                <p class="mt-2">{{ port.description }}</p>
+                <p>{{ port.description }}</p>
             </div>
         </div>
     </section>

@@ -41,6 +41,6 @@ _NOTE: Not all the rules are here yet_
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
 
-<PortList file="redstone" />
-<PortList file="item" />
-<PortList file="mediumstone" />
+<PortList file="redstone.yaml" />
+<PortList file="item.yaml" />
+<PortList file="mediumstone.yaml" />
