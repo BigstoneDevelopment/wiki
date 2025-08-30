@@ -1,28 +1,25 @@
 <script setup>
-    import { ref, onMounted } from 'vue';
     import YAML from 'yaml';
 
     const props = defineProps({
         file: { type: String, required: true }
     });
 
-    const data = ref({ category: '', intro: '', ports: [] });
+    const yamlFiles = import.meta.globEager('../data/ports/*.yaml', { query: '?raw', import: 'default' });
 
-    const yamlFiles = import.meta.glob('../data/ports/*.yaml', { query: '?raw', import: 'default' });
+    const path = `../data/ports/${props.file}`;
+    let raw = '';
+    if (yamlFiles[path]) {
+        raw = yamlFiles[path];
+    } else {
+        console.error(`Port file not found: ${path}`);
+    };
 
-    onMounted(async () => {
-        const path = `../data/ports/${props.file}`;
-        if (!yamlFiles[path]) {
-            console.error(`Port file not found: ${path}`);
-            return;
-        };
-        const raw = await yamlFiles[path]();
-        data.value = YAML.parse(raw);
-    });
+    const data = raw ? YAML.parse(raw) : { category: '', intro: '', ports: [] };
 </script>
 
 <template>
-    <section class="my-8">
+    <section v-if="data.ports.length" class="my-8">
         <h3>{{ data.category }}</h3>
         <div v-html="data.intro" class="prose mb-4"></div>
 
@@ -36,4 +33,6 @@
             </div>
         </div>
     </section>
+
+    <p v-else>No ports found for file: {{ props.file }}</p>
 </template>
