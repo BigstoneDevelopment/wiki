@@ -54,7 +54,7 @@
                     <p><strong>Made By:</strong> {{ port.madeBy }}</p>
                     <p><strong>Status:</strong> {{ port.status }}</p>
                     <p><strong>Location:</strong> {{ port.location }}</p>
-                    <p>{{ port.description }}</p>
+                    <p v-html="port.description"></p>
                 </div>
             </details>
         </div>
