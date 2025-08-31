@@ -12,8 +12,7 @@ ports:
     status: Compliant
     location: "iBIN at (7, 2) - oBIN at (10, 2)"
     description: |
-      The default port. Used to connect components together, and is the simplest port
-      (as it does not preserve signal strength). These are made for speed.
+      The default port. Used to connect components together, and is the simplest port (as it does not preserve signal strength). These are made for speed.
 
   - name: HEX
     emoji: 🟦
@@ -22,8 +21,8 @@ ports:
     status: Compliant
     location: "iHEX at (5, 2) - oHEX at (12, 2)"
     description: |
-      A more advanced port. They preserve the signal strength from the output of the previous block.
-      Useful for HEX calculations. Recommended to have iHEX next to an iBIN to ensure compatibility.
+      A more advanced port. They preserve the signal strength from the output of the previous block. Useful for HEX calculations.
+      Recommended to have iHEX next to an iBIN to ensure compatibility with other components (Make iBIN set the input on that side to 15 or 0 to convert it to HEX)
 
   - name: HEX-STATE
     emoji: 🟩
@@ -32,8 +31,7 @@ ports:
     status: Compliant
     location: "iHEX-STATE at (5, 4) - oHEX-STATE at (12, 4)"
     description: |
-      (Under development) Used to check the state of a component which is currently doing an operation.
-      The component can decide what signal strength each state is. Useful for "observing" component states.
+      (Under development) Used to check the state of a component which is currently doing an operation. The component can decide what signal strength each state is. If a component decides multiple states counts as the same value it should pulse when changing between them to indicate the state has changed (But try avoid having multiple states output the same thing). (Examples: A comparator could return the value of the state; an observer can "observe" the state to know if it has changed). You could use this output to make your bigstone circuit do certain things!
 
   - name: HEX-2
     emoji: 🟨
@@ -55,7 +53,7 @@ ports:
       iBIN-LR at (2, 3) for 1st bit, and stack upwards for each additional bit.
       oBIN-LR at (14, 3) similarly stacks upwards.
     description: |
-      Useful for computational components, especially since most computational circuits are vertical.
+      Useful for computational components, especially since most computational circuits are vertical, so you can easily plug it right in!
 
   - name: BIN-8
     emoji: 🟧
@@ -64,8 +62,9 @@ ports:
     status: Semistandard
     location: "Coming soon (never)"
     description: |
-      Carries 8 bits of data, but is huge, so a wire can only be one way.
-      Useful for speed over long distances of wires, but dangerously incompatible with many other ports.
+      Carrys 8 bits of data, but is huge, so a wire can only be one way. However, it can be useful for speed over a long distance of wires, and can also save space within a component since you don't need to fit a HEX decoder inside your components if it uses BIN-8 instead.
+
+      ⚠️ **Dangerously incompatible next to:** 🟥BIN, 🟦HEX, 🟦BIN-LR, 🟫RAIL
 
   - name: SOUND
     emoji: 🟪
@@ -74,7 +73,7 @@ ports:
     status: Compliant
     location: "iSOUND at (7, 4) - oSOUND at (10, 4)"
     description: |
-      A wireless port using sound and sculk sensors to transfer data.
+      A wireless port using sound and skulk sensors to transfer data.
 
   - name: RAIL
     emoji: 🟫
@@ -83,5 +82,6 @@ ports:
     status: Compliant
     location: "iRAIL at (8, 2) - oRAIL at (9, 2)"
     description: |
-      The iRAIL is regular rail, and oRAIL is powered rail. Used to transfer items (or mobs/players)
-      using minecarts. ⚠️ Warning: make sure components use the same type of minecart to avoid mixing.
+      The iRAIL is regular rail, and oRAIL is powered rail. This port can be used to transfer items (or mobs/players) using minecarts.
+
+      ⚠️ **WARNING:** Make sure you put these next to components that use the same type of minecart. Otherwise minecart types can mix and cause issues.
