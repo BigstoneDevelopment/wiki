@@ -29,6 +29,9 @@
             const raw = await res.text();
             data.value = YAML.parse(raw);
             data.value.intro = md.render(data.value.intro);
+            for (const port of data.value.ports) {
+                port.description = md.render(port.description);
+            };
         } catch (e) {
             console.error(`Port file not found: ${props.file}`, e);
         };
