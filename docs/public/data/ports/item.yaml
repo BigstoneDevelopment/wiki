@@ -20,8 +20,7 @@ ports:
         - iITEM → top of block
         - oITEM → bottom of block
     description: |
-      Transports items using hoppers. Recommended to use bITEM on sides for multidirectional support.
-      For speed, prefer ITEM-WATER instead when possible.
+      Transports items using hoppers. Recommended to use bITEM on the sides as it is multidirectional. If you want speed, try to use ITEM-WATER instead of iITEM/oITEM-HOPPER when possible.
 
   - name: ITEM-WATER
     emoji: ⬛️
@@ -36,4 +35,4 @@ ports:
         - iITEM → top of block
         - oITEM → bottom of block
     description: |
-      Transports items using water streams. Faster than hoppers, but cannot be multidirectional.
+      Transports items using water streams. It is faster, but unlike ITEM-HOPPER, it cannot be multidirectional on the sides.
