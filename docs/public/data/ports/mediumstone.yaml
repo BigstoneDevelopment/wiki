@@ -14,7 +14,8 @@ ports:
     location: "iMBIN at (3, 2) - oMBIN at (6, 2)"
     description: |
       The Medium version of the BIN port.
-      ⚠️ Dangerously incompatible next to MHEX.
+      
+      ⚠️ **Dangerously incompatible next to:** 🟦MHEX
 
   - name: MHEX
     emoji: 🟦
@@ -24,4 +25,5 @@ ports:
     location: "iMHEX at (3, 2) - oMHEX at (6, 2)"
     description: |
       The Medium version of the HEX port.
-      ⚠️ Dangerously incompatible next to MBIN.
+
+      ⚠️ **Dangerously incompatible next to:** 🟥MBIN
