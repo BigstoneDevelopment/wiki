@@ -85,3 +85,12 @@ ports:
       The iRAIL is regular rail, and oRAIL is powered rail. This port can be used to transfer items (or mobs/players) using minecarts.
 
       ⚠️ **WARNING:** Make sure you put these next to components that use the same type of minecart. Otherwise minecart types can mix and cause issues.
+
+  - name: WALK
+    emoji: 🍋‍🟩
+    color: lime
+    madeBy: Watier
+    status: Compliant 
+    location: "biWALK at (6, 2) and (11, 2)"
+    description: |
+      A port that allows entry and exit to components and mobs/players to be moved through a port without minecarts, useful for shorter distances and quick entry into components.
