@@ -89,7 +89,7 @@ ports:
   - name: WALK
     emoji: 🍋‍🟩
     color: lime
-    madeBy: Watier
+    madeBy: Wateir
     status: Compliant 
     location: "biWALK at (6, 2) and (11, 2)"
     description: |
