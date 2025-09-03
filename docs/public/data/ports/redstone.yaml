@@ -90,7 +90,7 @@ ports:
     emoji: 🍋‍🟩
     color: lime
     madeBy: Parrot
-    status: Compliant 
+    status: Non-compliant (will be probably removed)
     location: "biWALK at (6, 2) and (11, 2)"
     description: |
       A port that allows entry and exit to components and mobs/players to be moved through a port without minecarts, useful for shorter distances and quick entry into components.
