@@ -59,7 +59,7 @@ ports:
     emoji: 🟧
     color: orange
     madeBy: LimeLight
-    status: Semistandard
+    status: Semistandard (present for documentation purposes)
     location: "Coming soon (never)"
     description: |
       Carrys 8 bits of data, but is huge, so a wire can only be one way. However, it can be useful for speed over a long distance of wires, and can also save space within a component since you don't need to fit a HEX decoder inside your components if it uses BIN-8 instead.
@@ -90,7 +90,7 @@ ports:
     emoji: 🍋‍🟩
     color: lime
     madeBy: Parrot
-    status: Non-compliant (will be probably removed)
+    status: Semistandard (present for documentation purposes)
     location: "biWALK at (6, 2) and (11, 2)"
     description: |
       A port that allows entry and exit to components and mobs/players to be moved through a port without minecarts, useful for shorter distances and quick entry into components.
