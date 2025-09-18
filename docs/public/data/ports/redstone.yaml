@@ -89,7 +89,7 @@ ports:
   - name: WALK
     emoji: 🍋‍🟩
     color: lime
-    madeBy: Parrot
+    madeBy: aFormalParrot
     status: Semistandard (present for documentation purposes)
     location: "biWALK at (6, 2) and (11, 2)"
     description: |
