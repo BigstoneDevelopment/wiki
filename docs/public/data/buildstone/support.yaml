@@ -1,0 +1,30 @@
+category: "Support"
+intro: |
+  - Each corner have a 2x2 area where the support sit (yellow part)
+  - The grey area need to be clear
+  - Can be add to a non 16x16 bigstone component
+  - All Made By: Wateir
+  - All Status: Non-Compliant
+
+Examples:
+  - name: Industrial Support
+    color: grey
+    madeBy: Wateir
+    status: Compliant
+    description: |
+      A industrial looking support
+
+    - name: Victorian Support
+    color: orange
+    madeBy: Wateir
+    status: Compliant
+    description: |
+      A archway support on brick to have a more 1850's look
+
+    - name: Scafolding
+    color: yellow
+    madeBy: Xoliks
+    status: Compliant
+    description: |
+      A buildstone version of the minecart scafolding
+      

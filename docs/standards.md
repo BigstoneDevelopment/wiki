@@ -32,7 +32,7 @@ _NOTE: Not all the rules are here yet_
 
 <br><br>
 
-![Locations of each of the ports](/ports.png)
+![Locations of each of the ports](/assets/ports.png)
 
 ::: info Port Compliance Ratings
 - ✅**Compliant:** A port/component that is completely compliant!
@@ -44,3 +44,17 @@ _NOTE: Not all the rules are here yet_
 <PortList file="redstone.yaml" />
 <PortList file="item.yaml" />
 <PortList file="mediumstone.yaml" />
+
+## BuildStone
+_NOTE: This is greatly experimental_
+
+### BuildStone Standard
+
+::: info BuildStone Compliance Ratings
+- ✅**Compliant:** A build that is completely compliant!
+- ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
+:::
+
+![Locations of each of the ports](/assets/SupportStandardTopView.png)
+
+<PortList file="support.yaml">
