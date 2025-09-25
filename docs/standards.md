@@ -41,9 +41,9 @@ _NOTE: Not all the rules are here yet_
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
 
-<PortList file="redstone.yaml" />
-<PortList file="item.yaml" />
-<PortList file="mediumstone.yaml" />
+<PortList file="ports/redstone.yaml" />
+<PortList file="ports/item.yaml" />
+<PortList file="ports/mediumstone.yaml" />
 
 ## BuildStone
 _NOTE: This is greatly experimental_
@@ -57,4 +57,4 @@ _NOTE: This is greatly experimental_
 
 ![Locations of each of the ports](/assets/SupportStandardTopView.png)
 
-<PortList file="support.yaml">
+<PortList file="buildstone/support.yaml">
