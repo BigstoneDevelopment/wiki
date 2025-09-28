@@ -48,8 +48,6 @@ _NOTE: Not all the rules are here yet_
 ## BuildStone
 _NOTE: This is greatly experimental_
 
-### BuildStone Standard
-
 ![Locations of each of the ports](/data/assets/SupportStandardTopView.png)
 
 ::: info BuildStone Compliance Ratings
