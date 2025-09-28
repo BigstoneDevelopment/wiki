@@ -32,7 +32,7 @@ _NOTE: Not all the rules are here yet_
 
 <br><br>
 
-![Locations of each of the ports](/assets/Ports.png)
+![Locations of each of the ports](/data/assets/Ports.png)
 
 ::: info Port Compliance Ratings
 - ✅**Compliant:** A port/component that is completely compliant!
@@ -55,6 +55,6 @@ _NOTE: This is greatly experimental_
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
 
-![Locations of each of the ports](/assets/SupportStandardTopView.png)
+![Locations of each of the ports](/data/assets/SupportStandardTopView.png)
 
 <PortList file="buildstone/support.yaml" />
