@@ -57,4 +57,4 @@ _NOTE: This is greatly experimental_
 
 ![Locations of each of the ports](/assets/SupportStandardTopView.png)
 
-<PortList file="buildstone/support.yaml">
+<PortList file="buildstone/support.yaml" />
