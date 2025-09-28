@@ -6,7 +6,7 @@ intro: |
   - All Made By: Wateir
   - All Status: Non-Compliant
 
-Examples:
+ports:
   - name: Industrial Support
     color: grey
     madeBy: Wateir

@@ -12,7 +12,7 @@
     const data = ref({ category: "", intro: "", ports: [] });
 
     const yamlFiles = 
-    	import.meta.glob("../data/menu/*/*.yaml"
+    	import.meta.glob("../data/ports/*/*.yaml"
     {
         query: "?raw",
         import: "default",
