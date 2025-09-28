@@ -14,14 +14,14 @@ ports:
     description: |
       A industrial looking support
 
-    - name: Victorian Support
+  - name: Victorian Support
     color: orange
     madeBy: Wateir
     status: Compliant
     description: |
       A archway support on brick to have a more 1850's look
 
-    - name: Scafolding
+  - name: Scafolding
     color: yellow
     madeBy: Xoliks
     status: Compliant
