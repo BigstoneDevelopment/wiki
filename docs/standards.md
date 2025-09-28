@@ -50,11 +50,11 @@ _NOTE: This is greatly experimental_
 
 ### BuildStone Standard
 
+![Locations of each of the ports](/data/assets/SupportStandardTopView.png)
+
 ::: info BuildStone Compliance Ratings
 - ✅**Compliant:** A build that is completely compliant!
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
-
-![Locations of each of the ports](/data/assets/SupportStandardTopView.png)
 
 <PortList file="buildstone/support.yaml" />
