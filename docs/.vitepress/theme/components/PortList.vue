@@ -11,7 +11,9 @@
 
     const data = ref({ category: "", intro: "", ports: [] });
 
-    const yamlFiles = import.meta.glob("../data/ports/*.yaml", {
+    const yamlFiles = 
+    	import.meta.glob("../data/menu/*/*.yaml"
+    {
         query: "?raw",
         import: "default",
     });
@@ -25,7 +27,7 @@
 
     onMounted(async () => {
         try {
-            const res = await fetch(`/data/ports/${props.file}`);
+            const res = await fetch(`/data/menu/${props.file}`);
             const raw = await res.text();
             data.value = YAML.parse(raw);
             data.value.intro = md.render(data.value.intro);
