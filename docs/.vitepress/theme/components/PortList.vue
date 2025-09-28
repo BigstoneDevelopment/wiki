@@ -25,7 +25,7 @@
 
     onMounted(async () => {
         try {
-            const res = await fetch(`/data/menu/${props.file}`);
+            const res = await fetch(`/data/ports/${props.file}`);
             const raw = await res.text();
             data.value = YAML.parse(raw);
             data.value.intro = md.render(data.value.intro);
