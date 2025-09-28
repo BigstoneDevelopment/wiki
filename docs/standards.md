@@ -32,7 +32,7 @@ _NOTE: Not all the rules are here yet_
 
 <br><br>
 
-![Locations of each of the ports](/assets/ports.png)
+![Locations of each of the ports](/assets/Ports.png)
 
 ::: info Port Compliance Ratings
 - ✅**Compliant:** A port/component that is completely compliant!
