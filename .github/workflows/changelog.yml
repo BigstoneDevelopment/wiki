@@ -1,0 +1,59 @@
+name: Auto changelog embed
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  send-discord-embed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set vars
+        id: vars
+        run: |
+          echo "repo_name=${GITHUB_REPOSITORY#*/}" >> $GITHUB_OUTPUT
+          echo "full_name=${GITHUB_REPOSITORY}" >> $GITHUB_OUTPUT
+
+      - name: Send embed
+        env:
+          DISCORD_WEBHOOK: ${{ secrets[env.DISCORD_WEBHOOK_URL] }}
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
+          REPO_NAME: ${{ steps.vars.outputs.repo_name }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK" ]; then
+            echo "No discord webhook URL set. Use secret: $DISCORD_WEBHOOK_URL"
+            exit 1
+          fi
+
+          EMBED_JSON=$(jq -n \
+            --arg title "$RELEASE_NAME" \
+            --arg url "$RELEASE_URL" \
+            --arg description "$RELEASE_BODY" \
+            --arg tag "$RELEASE_TAG" \
+            --arg repo "$REPO_NAME" \
+            '{
+              embeds: [
+                {
+                  title: "\($repo) – New Release: \($title)",
+                  url: $url,
+                  description: ($description | if length > 4000 then (.[:3997] + "...") else . end),
+                  color: 3447003,
+                  fields: [
+                    { name: "Tag", value: $tag, inline: true },
+                    { name: "Repository", value: $repo, inline: true }
+                  ],
+                  timestamp: (now | todate)
+                }
+              ]
+            }')
+
+          echo "$EMBED_JSON" | jq .
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "$EMBED_JSON" \
+               "$DISCORD_WEBHOOK"
