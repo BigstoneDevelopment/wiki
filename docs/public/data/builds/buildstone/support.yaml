@@ -6,7 +6,7 @@ intro: |
   - All Made By: Wateir
   - All Status: Non-Compliant
 
-ports:
+builds:
   - name: Industrial Support
     thumbnail: /data/assets/DeepslateSupport.png
     color: grey
