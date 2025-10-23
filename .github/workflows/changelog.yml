@@ -34,7 +34,10 @@ jobs:
             exit 1
           fi
 
-          DESCRIPTION="${RELEASE_BODY}\n\n_Contact a <@&${ROLE_ID}> if you have any questions!_\n-# Pull requests, suggestions and feedback are welcome!"
+          DESCRIPTION="${RELEASE_BODY}
+          
+          _Contact a <@&${ROLE_ID}> if you have any questions!_
+          -# Pull requests, suggestions and feedback are welcome!"
 
           EMBED_JSON=$(jq -n \
             --arg title "$RELEASE_NAME" \
@@ -47,7 +50,7 @@ jobs:
               embeds: [
                 {
                   title: "\($title)",
-                  description: ($description | gsub("\\r"; "") | if length > 400 then (.[:397] + "...") else . end),
+                  description: ($description | gsub("\r"; "") | if length > 400 then (.[:397] + "...") else . end),
                   fields: [
                     { name: "Tag", value: "[\($tag)](\($url))", inline: true },
                     { name: "Repository", value: "[\($repo)](\($repo_url))", inline: true },
