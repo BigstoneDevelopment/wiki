@@ -23,6 +23,7 @@ jobs:
           RELEASE_URL: ${{ github.event.release.html_url }}
           REPO_NAME: ${{ steps.vars.outputs.repo_name }}
         run: |
+          echo "$DISCORD_WEBHOOK"
           if [ -z "$DISCORD_WEBHOOK" ]; then
             echo "Discord webhook url not found. Use the secret: DISCORD_WEBHOOK_URL"
             exit 1
