@@ -35,7 +35,6 @@ jobs:
             --arg tag "$RELEASE_TAG" \
             --arg repo "$REPO_NAME" \
             '{
-              username: "GitHub Release Bot",
               embeds: [
                 {
                   title: "\($repo) – New Release: \($title)",
