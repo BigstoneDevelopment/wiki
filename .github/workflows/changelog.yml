@@ -37,10 +37,9 @@ jobs:
             '{
               embeds: [
                 {
-                  title: "\($repo) – New Release: \($title)",
+                  title: "\($title)",
                   url: $url,
                   description: ($description | if length > 4000 then (.[:3997] + "...") else . end),
-                  color: 3447003,
                   fields: [
                     { name: "Tag", value: $tag, inline: true },
                     { name: "Repository", value: $repo, inline: true }
