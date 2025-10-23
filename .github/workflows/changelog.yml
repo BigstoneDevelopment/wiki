@@ -5,7 +5,7 @@ on:
     types: [published]
 
 env:
-  DISCORD_ROLE_ID: 1392145565688791060
+  DISCORD_ROLE_ID: "1392145565688791060"
 
 jobs:
   send-discord-embed:
@@ -47,7 +47,7 @@ jobs:
               embeds: [
                 {
                   title: "\($title)",
-                  description: ($description | if length > 400 then (.[:397] + "...") else . end),
+                  description: ($description | gsub("\\r"; "") | if length > 400 then (.[:397] + "...") else . end),
                   fields: [
                     { name: "Tag", value: "[\($tag)](\($url))", inline: true },
                     { name: "Repository", value: "[\($repo)](\($repo_url))", inline: true },
