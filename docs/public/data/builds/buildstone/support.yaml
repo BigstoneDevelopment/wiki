@@ -8,6 +8,7 @@ intro: |
 
 ports:
   - name: Industrial Support
+    thumbnail: /data/assets/DeepslateSupport.png
     color: grey
     madeBy: Wateir
     status: Compliant
@@ -15,6 +16,7 @@ ports:
       A industrial looking support
 
   - name: Victorian Support
+    thumbnail: /data/assets/BrickSupport.png
     color: orange
     madeBy: Wateir
     status: Compliant
@@ -22,6 +24,7 @@ ports:
       A archway support on brick to have a more 1850's look
 
   - name: Scafolding
+    thumbnail: /data/assets/ScafoldingSupport.png
     color: yellow
     madeBy: Xoliks
     status: Compliant

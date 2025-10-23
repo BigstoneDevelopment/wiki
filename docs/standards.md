@@ -55,4 +55,4 @@ _NOTE: This is greatly experimental_
 - ❌ **Noncompliant:** It's not compliant as it doesn't fit under any other categories, does something already done but way way worse, or completely useless.
 :::
 
-<PortList file="buildstone/support.yaml" />
+<BuildList file="buildstone/support.yaml" />
