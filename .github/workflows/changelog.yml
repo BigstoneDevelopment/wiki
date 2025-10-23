@@ -37,6 +37,7 @@ jobs:
           DESCRIPTION="${RELEASE_BODY}
           
           _Contact a <@&${ROLE_ID}> if you have any questions!_
+          
           -# Pull requests, suggestions and feedback are welcome!"
 
           EMBED_JSON=$(jq -n \
