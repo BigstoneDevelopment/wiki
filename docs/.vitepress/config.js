@@ -13,6 +13,7 @@ export default {
             { text: "Contact", link: "/contact" },
             { text: "Guides", link: "/guides" },
             { text: "Standards", link: "/standards" },
+            { text: "History", link: "/history" },
         ],
         sidebar: [
             {
@@ -21,6 +22,7 @@ export default {
                 items: [
                     { text: "Introduction", link: "/about" },
                     { text: "Getting Started", link: "/standards" },
+                    { text: "Our History", link: "/history" },
                 ],
             },
             {
