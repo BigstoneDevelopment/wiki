@@ -1,6 +1,6 @@
 # History
 
-The history of Bigstone  
+The history of Bigstone (note: this page is currently a W.I.P.)  
 [[TOC]]
 
 ## 2025:  
